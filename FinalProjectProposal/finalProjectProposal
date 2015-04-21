@@ -1,0 +1,21 @@
+Brendan Gerlach: PHP Advanced Class Spring 2015
+Final Project Proposal
+
+1.  Team Members:   Brendan Gerlach
+2.  Project Idea:   I would like to build a basic web page forum using object oriented PHP code.
+                    The forum would allow users to login, and then post to topics created by the admin.  
+                    The admin to the site would be able to create, read, update, and delete topics and other users posts.
+3.  List of Tasks:
+                    1.  Design the layout of the forum.  1 hour
+                    2.  Design the framework for the forum using object oriented PHP principles. 1 hour
+                    3.  Create the database the forum will use to preform CRUD operations. 1 hour
+                    3.  Write the code in NetBeans
+                        - Create the view pages the users will see, and add a CSS style sheet. 2 hours
+                        - Create the PHP files including classes and functions that will handle the CRUD operations. Time Estimate Unknown.
+                    4.  Insert topics and forum posts.  1 hour
+                    5.  Test CRUD operations and fix bugs. 1 hour
+
+                           
+
+
+                   
