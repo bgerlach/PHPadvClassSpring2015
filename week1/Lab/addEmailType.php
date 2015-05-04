@@ -28,9 +28,9 @@ echo '<p>',$value,'</p>';
 }
 } else {
 
- //insert email type via saveEmailType function in emailTypeDB class   
-$addFunction = "saveEmailType";
-$emailTypeDB->$addFunction($emailType);
+  
+ 
+$emailTypeDB->saveEmailType($emailType);
     
 
 }
@@ -44,9 +44,8 @@ $emailTypeDB->$addFunction($emailType);
 
 <strong>
 <?php
-//display function 
-$displayFunction = "displayEmailType";
-$emailTypeDB->$displayFunction();
+
+$emailTypeDB->displayEmailType();
 
 ?>
 </strong>
