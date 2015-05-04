@@ -41,7 +41,7 @@ class EmailTypeDAO implements IDAO {
     
     public function getById($id) {
          
-         $model = new EmailTypeModel(); // this creates a dependacy, how can we fix this
+         $model = new EmailTypeModel();
          $db = $this->getDB();
          
          $stmt = $db->prepare("SELECT * FROM emailtype WHERE emailtypeid = :emailtypeid");

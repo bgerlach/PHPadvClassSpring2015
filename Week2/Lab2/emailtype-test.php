@@ -47,7 +47,6 @@
                     $emailtypeModel->setActive($active);
                     $emailtypeModel->setEmailtype($emailType);
                     
-                   // var_dump($phonetypeModel);
                     if ( $emailTypeDAO->save($emailtypeModel) ) {
                         echo 'Email Added';
                     }

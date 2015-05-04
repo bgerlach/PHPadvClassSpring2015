@@ -25,7 +25,7 @@
             
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
              
-            // lets update the phone
+            // update email
             $stmt = $db->prepare("UPDATE email SET lastupdated = now() where emailid = :emailid");  
             $values = array(":emailid"=>$result['emailid']);
             if ( $stmt->execute($values) && $stmt->rowCount() > 0 ) {
