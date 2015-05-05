@@ -2,22 +2,22 @@
 
 
 
-class EmailTypeService {
+class EmailService {
    
     private $_errors = array();
     private $_Util;
     private $_DB;
     private $_Validator;
-    private $_EmailTypeDAO;
-    private $_EmailTypeModel;
+    private $_EmailDAO;
+    private $_EmailModel;
 
 
-    public function __construct($db, $util, $validator, $emailTypeDAO, $emailtypeModel) {
+    public function __construct($db, $util, $validator, $emailDAO, $emailModel) {
         $this->_DB = $db;    
         $this->_Util = $util;
         $this->_Validator = $validator;
-        $this->_EmailTypeDAO = $emailTypeDAO;
-        $this->_EmailTypeModel = $emailtypeModel;
+        $this->_EmailDAO = $emailDAO;
+        $this->_EmailModel = $emailModel;
     }
 
 
@@ -32,7 +32,7 @@ class EmailTypeService {
             $this->displayErrors();
         } else {
             
-            if (  $this->_EmailTypeDAO->save($this->_EmailTypeModel) ) {
+            if (  $this->_EmailDAO->save($this->_EmailModel) ) {
                 echo 'Email Added/updated';
             } else {
                 echo 'Email could not be added Added';
@@ -45,10 +45,10 @@ class EmailTypeService {
        
         if ( $this->_Util->isPostRequest() ) {                
             $this->_errors = array();
-            if( !$this->_Validator->emailTypeIsValid($this->_EmailTypeModel->getEmailtype()) ) {
-                 $this->_errors[] = 'Email Type is invalid';
+            if( !$this->_Validator->emailIsValid($this->_EmailModel->getEmail()) ) {
+                 $this->_errors[] = 'Email is invalid';
             } 
-            if( !$this->_Validator->activeIsValid($this->_EmailTypeModel->getActive()) ) {
+            if( !$this->_Validator->activeIsValid($this->_EmailModel->getActive()) ) {
                  $this->_errors[] = 'Active is invalid';
             } 
         }
@@ -70,14 +70,14 @@ class EmailTypeService {
 
 
     public function displayEmail() {        
-        $stmt = $this->_DB->prepare("SELECT * FROM emailtype");
+        $stmt = $this->_DB->prepare("SELECT * FROM email");
 
         if ($stmt->execute() && $stmt->rowCount() > 0) {
             
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
            
             foreach ($results as $value) {
-                echo '<p>', $value['emailtype'], '</p>';
+                echo '<p>', $value['email'], '</p>';
             }
         } else {
             echo '<p>No Data</p>';
@@ -87,20 +87,21 @@ class EmailTypeService {
     
     public function displayEmailActions() {        
         
-        $emailTypes = $this->_EmailTypeDAO->getAllRows();
+        $email = $this->_EmailDAO->getAllRows();
         
-        if ( count($emailTypes) < 0 ) {
+        if ( count($email) < 0 ) {
             echo '<p>No Data</p>';
         } else {
             
             
-             echo '<table border="1" cellpadding="5"><tr><th>Email Type</th><th>Active</th><th></th><th></th></tr>';
-             foreach ($emailTypes as $value) {
+             echo '<table border="1" cellpadding="5"><tr><th>Email</th><th>Email Type</th><th>Active</th><th>Update</th><th>Delete</th></tr>';
+             foreach ($email as $value) {
                 echo '<tr>';
-                echo '<td>', $value->getEmailtype(),'</td>';
+                echo '<td>', $value->getEmail(),'</td>';
+                echo '<td>',$value->getEmailtype(),'</td>';
                 echo '<td>', ( $value->getActive() == 1 ? 'Yes' : 'No') ,'</td>';
-                echo '<td><a href=update.php?emailtypeid=',$value->getEmailtypeid(),'>Update</a></td>';
-                echo '<td><a href=delete.php?emailtypeid=',$value->getEmailtypeid(),'>Delete</a></td>';
+                echo '<td><a href=updateEmail.php?emailid=',$value->getEmailid(),'>Update</a></td>';
+                echo '<td><a href=deleteEmail.php?emailid=',$value->getEmailid(),'>Delete</a></td>';
                 echo '</tr>' ;
             }
             echo '</table>';

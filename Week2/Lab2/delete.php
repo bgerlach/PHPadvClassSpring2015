@@ -1,4 +1,6 @@
-<?php include './bootstrap.php'; ?>
+<?php 
+
+include './bootstrap.php'; ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -33,5 +35,7 @@
              echo '<p><a href="',filter_input(INPUT_SERVER, 'HTTP_REFERER'),'">Go back</a></p>';
         
         ?>
+        
+
     </body>
 </html>

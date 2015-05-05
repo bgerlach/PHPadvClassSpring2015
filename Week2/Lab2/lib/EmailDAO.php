@@ -1,19 +1,7 @@
  <?php
-/**
- * PhoneDAO
- * 
- * DAO = Data Access Object
- * 
- * The idea of a Data Access object is a class the will simply execute crud 
- * operations for your database.  We want to be able to create a DAO for each
- * table in your database.
- * 
- * CRUD = (Create Read Update Disable/Delete)
- *
- * @author User
- */
 
-// *** NOTE this class is not complete and does not work
+
+
 class EmailDAO implements IDAO {
     
     private $DB = null;
@@ -58,7 +46,7 @@ class EmailDAO implements IDAO {
     }
     
     
-    public function save(IModel $model) {
+    public function save(bgerlach\week2\IModel $model) {
                  
          $db = $this->getDB();
          

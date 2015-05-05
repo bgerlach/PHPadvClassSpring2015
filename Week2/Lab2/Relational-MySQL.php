@@ -1,4 +1,6 @@
-<?php include './bootstrap.php'; ?>
+<?php 
+
+include './bootstrap.php'; ?>
 <!DOCTYPE html>
 <html>
     <head>

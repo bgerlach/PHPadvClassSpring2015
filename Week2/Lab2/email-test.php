@@ -1,4 +1,8 @@
-<?php include './bootstrap.php'; ?>
+<?php 
+
+include './bootstrap.php'; ?>
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -104,17 +108,22 @@
                     <th>Last updated</th>
                     <th>Logged</th>
                     <th>Active</th>
+                    <th>Update</th>
+                    <th>Delete</th>
                 </tr>
          <?php 
             $email = $emailDAO->getAllRows(); 
             foreach ($email as $value) {
                 echo '<tr><td>',$value->getEmail(),'</td><td>',$value->getEmailtype(),'</td><td>',date("F j, Y g:i(s) a", strtotime($value->getLastupdated())),'</td><td>',date("F j, Y g:i(s) a", strtotime($value->getLogged())),'</td>';
-                echo  '<td>', ( $value->getActive() == 1 ? 'Yes' : 'No') ,'</td></tr>' ;
+                echo  '<td>', ( $value->getActive() == 1 ? 'Yes' : 'No') ,'</td>' ;
+                               
+                echo '<td><a href=updateEmail.php?emailid=',$value->getEmailid(),'>Update</a></td>';
+                echo '<td><a href=deleteEmail.php?emailid=',$value->getEmailid(),'>Delete</a></td></tr>';
             }
 
          ?>
             </table>
-         
+
          <a href="emailtype-test-service.php">Update/Delete Email Type</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
          <a href="emailtype-test.php">Add Email Type</a>
     </body>

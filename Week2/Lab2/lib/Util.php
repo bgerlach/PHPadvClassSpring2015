@@ -1,10 +1,7 @@
 <?php
 
-/**
- * Util - functions used to help with the over all application
- *
- * @author User
- */
+
+
 class Util {
     
     

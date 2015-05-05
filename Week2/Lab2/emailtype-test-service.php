@@ -1,4 +1,6 @@
-<?php include './bootstrap.php'; ?>
+<?php 
+
+include './bootstrap.php'; ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -55,6 +57,6 @@
              $emailTypeService->displayEmailActions();
          ?>
          
-         
+        <a href="email-test.php">Add Email</a>
     </body>
 </html>

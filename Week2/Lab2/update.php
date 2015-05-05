@@ -1,4 +1,6 @@
-<?php include './bootstrap.php'; ?>
+<?php 
+
+include './bootstrap.php'; ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -47,7 +49,7 @@
         ?>
         
         
-         <h3>UPDATE email type</h3>
+         <h3>Update Email Type</h3>
         <form action="#" method="post">
              <input type="hidden" name="emailtypeid" value="<?php echo $emailtypeid; ?>" />
             <label>Email Type:</label> 

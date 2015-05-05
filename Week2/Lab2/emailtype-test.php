@@ -1,4 +1,6 @@
-<?php include './bootstrap.php'; ?>
+<?php 
+
+include './bootstrap.php'; ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -74,15 +76,14 @@
          
          
          <?php         
-             
             $emailTypes = $emailTypeDAO->getAllRows();
             
             foreach ($emailTypes as $value) {
                 echo '<p>',$value->getEmailtype(),'</p>';
             }
-            
          ?>
-         
+                
+         <a href="email-test.php">Add Email</a>
          
     </body>
 </html>

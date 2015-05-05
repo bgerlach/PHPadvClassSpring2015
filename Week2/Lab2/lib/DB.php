@@ -1,10 +1,5 @@
- <?php
-
-/**
- * DB is the general class to connection to our database
- *
- * @author GForti
- */
+ 
+<?php
 
 
 class DB {
