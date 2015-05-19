@@ -9,9 +9,9 @@ use App\models\interfaces\IModel;
 
 class EmailService implements IService {
     
-     protected $DAO;
-     protected $validator;
-     protected $model;
+    protected $DAO;
+    protected $validator;
+    protected $model;
     protected $emailDAO;
     protected $emailTypeService;
              
@@ -30,8 +30,7 @@ class EmailService implements IService {
      function setModel(IModel $model) {
          $this->model = $model;
      }
-     
-     
+      
      function getDAO() {
          return $this->DAO;
      }
@@ -84,7 +83,7 @@ class EmailService implements IService {
     }
     
     public function delete($id) {
-        return $this->getDAO()->read($id);
+        return $this->getDAO()->delete($id);
     }
     
     public function create(IModel $model) {

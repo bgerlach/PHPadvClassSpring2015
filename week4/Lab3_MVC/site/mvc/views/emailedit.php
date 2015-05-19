@@ -54,10 +54,6 @@
          <br />
          <br />
          
-        <form action="#" method="post">
-            <input type="hidden" name="action" value="add" />
-            <input type="submit" value="ADD Page" /> 
-        </form>
          <?php
          
         
@@ -83,7 +79,7 @@
          
          ?>
                  <br />       
-         <a href="emailtype">Email Type</a>
+        <a href="email">Back</a>
 
     </body>
 </html>

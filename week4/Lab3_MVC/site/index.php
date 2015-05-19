@@ -41,7 +41,7 @@ use Exception;
             
             $this->DI = array();
         }
-
+        
         /**
          * Run the application!
          */
@@ -51,7 +51,6 @@ use Exception;
                 throw new ControllerFailedException('Controller for page "' . $page . '" failed');               
             }          
         }
-        
         
         protected function runController($page, IService $scope) {
                        
@@ -162,10 +161,7 @@ use Exception;
     }
 
 }
-
-
-
-       
+ 
     //http://php.net/manual/en/language.oop5.typehinting.php
     function runPage() {
         $_configURL = '.' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'config.ini.php';

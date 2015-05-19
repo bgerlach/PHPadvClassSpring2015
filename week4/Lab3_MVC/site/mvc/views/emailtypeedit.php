@@ -35,13 +35,7 @@
          
          <br />
          <br />
-         
-        <form action="#" method="post">
-            <input type="hidden" name="action" value="add" />
-            <input type="submit" value="ADD Page" /> 
-        </form>
-         
-         
+      
          <?php
          
          if ( count($scope->view['EmailTypes']) <= 0 ) {
@@ -61,9 +55,11 @@
             echo '</table>';
             
         }
-         
-         
+  
          ?>
+            <br>
+            <a href="emailtype">Back</a>
+
          
     </body>
 </html>

@@ -67,10 +67,6 @@ and open the template in the editor.
          <br />
          <br />
          
-        <form action="#" method="post">
-            <input type="hidden" name="action" value="add" />
-            <input type="submit" value="ADD Page" /> 
-        </form>
          <?php
          
         
@@ -92,10 +88,8 @@ and open the template in the editor.
             
         }
          
-         
-         
-         
-         
          ?>
+         <br>
+        <a href="emailtype">Add Email Type</a>
     </body>
 </html>

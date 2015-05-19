@@ -12,9 +12,6 @@ and open the template in the editor.
     <body>
         
         <?php
-        // put your code here
-        
-       
          if ( $scope->util->isPostRequest() ) {
              
              if ( isset($scope->view['errors']) ) {
@@ -41,6 +38,8 @@ and open the template in the editor.
         <form action="#" method="post">
             <label>Email Type:</label> 
             <input type="text" name="emailtype" value="<?php echo $emailType; ?>" placeholder="" />
+            <br> <br>
+            <label>Active:</label> 
             <input type="number" max="1" min="0" name="Active" value="<?php echo $active; ?>" />
             <input type="hidden" name="action" value="create" />
             <input type="submit" value="Submit" />
@@ -48,9 +47,7 @@ and open the template in the editor.
          <br />
          <br />
          
-        <form action="#" method="post">
-            <input type="hidden" name="action" value="add" />
-            <input type="submit" value="ADD Page" /> 
+
         </form>
          <?php
          
@@ -72,11 +69,8 @@ and open the template in the editor.
             echo '</table>';
             
         }
-         
-         
-         
-         
-         
          ?>
+        <br>
+        <a href="email">Add Email</a>
     </body>
 </html>
