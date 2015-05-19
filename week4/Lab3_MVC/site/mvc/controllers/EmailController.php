@@ -6,6 +6,8 @@ namespace APP\controller;
 use App\models\interfaces\IController;
 use App\models\interfaces\IService;
 
+//controller for Email
+
 class EmailController extends BaseController implements IController {
        
     public function __construct( IService $EmailService ) {                

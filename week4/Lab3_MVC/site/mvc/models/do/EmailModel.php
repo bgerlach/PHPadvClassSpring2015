@@ -2,6 +2,7 @@
 
 namespace App\models\services;
 
+//EmailModel class with getters and setters
 
 class EmailModel extends BaseModel {
     

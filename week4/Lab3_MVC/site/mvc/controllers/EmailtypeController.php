@@ -6,13 +6,14 @@ namespace APP\controller;
 use App\models\interfaces\IController;
 use App\models\interfaces\IService;
 
+//controller for Emailtype
+
 class EmailtypeController extends BaseController implements IController {
        
     public function __construct( IService $EmailTypeService ) {                
         $this->service = $EmailTypeService;     
         
     }
-
 
     public function execute(IService $scope) {
                 

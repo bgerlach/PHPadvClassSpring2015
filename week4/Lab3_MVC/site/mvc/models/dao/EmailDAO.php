@@ -15,6 +15,7 @@ class EmailDAO extends BaseDAO implements IDAO {
         $this->setLog($log);
     }
           
+    //check if emailid exists
     public function idExisit($id) {
         
         $db = $this->getDB();
@@ -26,6 +27,7 @@ class EmailDAO extends BaseDAO implements IDAO {
          return false;
     }
     
+    //return email data by emailid
     public function read($id) {
          
          $model = clone $this->getModel();
@@ -43,7 +45,7 @@ class EmailDAO extends BaseDAO implements IDAO {
         return $model;    
     }
     
-    
+    //add new email
     public function create(IModel $model) {
                  
          $db = $this->getDB();
@@ -65,7 +67,7 @@ class EmailDAO extends BaseDAO implements IDAO {
         return false;
     }
     
-    
+    //update email
      public function update(IModel $model) {
                  
          $db = $this->getDB();
@@ -90,6 +92,7 @@ class EmailDAO extends BaseDAO implements IDAO {
          return false;
     }
     
+    //delete email by emailid
     public function delete($id) {
           
         $db = $this->getDB();         
@@ -103,6 +106,7 @@ class EmailDAO extends BaseDAO implements IDAO {
          return false;
     }
     
+    //return all rows email table
     public function getAllRows() {
        $db = $this->getDB();
        $values = array();

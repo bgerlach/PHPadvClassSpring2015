@@ -9,6 +9,7 @@ use \PDO;
 
 class EmailTypeDAO extends BaseDAO implements IDAO {
     
+    
     public function __construct( PDO $db, IModel $model, ILogging $log ) {        
         $this->setDB($db);
         $this->setModel($model);
@@ -26,6 +27,7 @@ class EmailTypeDAO extends BaseDAO implements IDAO {
          return false;
     }
     
+    //return emailtype by id
     public function read($id) {
          
          $model = clone $this->getModel();
@@ -42,7 +44,7 @@ class EmailTypeDAO extends BaseDAO implements IDAO {
          return $model;
     }
     
-    
+    //add new emailtype
     public function create(IModel $model) {
                  
          $db = $this->getDB();
@@ -64,7 +66,7 @@ class EmailTypeDAO extends BaseDAO implements IDAO {
          return false;
     }
     
-    
+    //update emailtype
      public function update(IModel $model) {
                  
          $db = $this->getDB();
@@ -91,6 +93,7 @@ class EmailTypeDAO extends BaseDAO implements IDAO {
          return false;
     }
     
+    //delte emailtype
     public function delete($id) {
           
         $db = $this->getDB();         
@@ -106,6 +109,7 @@ class EmailTypeDAO extends BaseDAO implements IDAO {
          return false;
     }
     
+    //return all rows in email type table
     public function getAllRows() {
        $db = $this->getDB();
        $values = array();
