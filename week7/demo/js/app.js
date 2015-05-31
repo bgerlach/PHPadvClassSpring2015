@@ -9,8 +9,8 @@ var myApp = angular.module('myApp', [
 
 myApp.constant('config', {
     "endpoints": {
-       "phones" : 'http://localhost/PHPadvClassSpring2015/week5/demo/api/v1/phones',
-       "phonetypes" : 'http://localhost/PHPadvClassSpring2015/week5/demo/api/v1/phonetypes'
+       "phones" : 'http://localhost:/PHPadvClassSpring2015/week5/demo/api/v1/phones',
+       "phonetypes" : 'http://localhost:/PHPadvClassSpring2015/week5/demo/api/v1/phonetypes'
     }
 });
 
