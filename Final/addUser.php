@@ -1,35 +1,29 @@
-<?php
-// Get the product data
-$username = filter_input(INPUT_POST, 'username');
-$password = filter_input(INPUT_POST, 'password');
+    <?php include_once 'Header.php'; ?>
+<html>
+    <link rel="stylesheet" type="text/css" href="main.css"/>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <div id="content">
+            <h1>Add User</h1>
+            <form action="addUser_code.php" method="post"
+                  >
+                </select>
+                <br />
+                <label>Username:</label>
+                <input type="text" name="username"/>
+                <br />
+                <label>Password</label>
+                <input type="text" name="password" />
+                <br />
+                <input type="submit" value="AddUser"/>
+                <br />
+            </form>
+            
+        </div>
+</body>
+ 
 
-
-// Validate inputs
-if (empty($username)) {
-    $error = "Invalid name.  Please enter a valid username";
-    echo $error;
-} 
-
-else if ((strlen($password) < 4))
-{
-    $error = "Invalid password.  Please enter a valid password over 4 characters in length";
-    echo $error;
-}   
-else{
-   // $password = sha1($password);
-    $db = new PDO("mysql:host=localhost;port=3306;dbname=PHPadvClassSpring2015", "root", "");
-    $dbs = $db->prepare('INSERT into users set username = :username, password = :password');
-    $dbs->bindParam(':username', $username, PDO::PARAM_STR);
-    $dbs->bindParam(':password', $password, PDO::PARAM_STR);
-
-    if ( $dbs->execute() && $dbs->rowCount() > 0 )
-    {
-        echo "Sign Up Complete";
-        header( 'Location: http://localhost/PHPadvClassSpring2015/Final/addForumPost.php' ) ;
-    }
-    else
-    {
-        echo "Sign Up Incomplete";
-        var_dump($db->errorInfo());
-    }
-}
+</html>

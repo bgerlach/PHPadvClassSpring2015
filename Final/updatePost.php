@@ -21,9 +21,10 @@ include './bootstrap.php'; ?>
        
         $util = new Util();
         $validator = new Validator();
-        $forumDB = new forumDB();
-        $usersDB = new usersDB();
-        $forumid = filter_input(INPUT_POST, 'forumid');
+        $emailDAO = new EmailDAO($db);
+        $emailTypeDAO = new EmailTypeDAO($db);
+        $emailModel = new EmailModel();
+        $emailTypeid = filter_input(INPUT_POST, 'emailtypeid');
         $emailTypes = $emailTypeDAO->getAllRows();
          
         if ( $util->isPostRequest() ) {

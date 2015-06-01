@@ -19,10 +19,8 @@
     $values = array(":subject"=>$subject, ":userpost" =>$userpost, ":username" => $username);
     
     if ( $stmt->execute($values) && $stmt->rowCount() > 0 ) {
-    echo 'Post Added';
     return true;   
 }
-    echo 'Post Not Added';
     return false;
 }
 
@@ -49,7 +47,7 @@
         echo '<td>', $value['subject'], '</p>';
         echo '<td>', $value['userpost'], '</p>';
        // echo '<td><a href=updateEmail.php?emailid=',$value->getEmailid(),'>Update</a></td>';
-        //echo '<td><a href=deleteEmail.php?emailid=',$value->getEmailid(),'>Delete</a></td></tr>';
+        //echo '<td><a href=delete_post.php?forumid=',$value['forumid'],'>Delete</a></td></tr>';
         $stmt->closeCursor();
     }
 }       else {

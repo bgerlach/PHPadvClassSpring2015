@@ -1,5 +1,5 @@
 <html>
-    
+
     <link rel="stylesheet" type="text/css" href="main.css"/>
     
     <head>
@@ -8,8 +8,6 @@
     </head>
           <body>  
     <?php 
-    
-    $validator = new Validator();
     
     include_once 'Header.php';
     
@@ -37,7 +35,10 @@
                 <input type="submit" value="Login"/>
                 <br />
             </form>          
-        </div>
+        
+                  <a href="addUser.php">New User</a>  
+                
+                </div>
 
 </body>
 </html>

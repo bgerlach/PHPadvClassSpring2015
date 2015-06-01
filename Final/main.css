@@ -1,20 +1,42 @@
 body {
 font-family: Arial, Helvetica, sans-serif;
-background: #ccc;
+background-image: url("images/nfl-background2_1.jpg");
 }
 #content {
-width: 550px;
+width: 850px;
 margin: 0 auto;
 padding: 20px;
-background: #FFFFFF;
+background: #43C435;
+font-weight: bold;
+border: 2px solid #000000;
+}
+
+#header {
+width: 850px;
+height: 75px;
+margin: 0 auto;
+padding: 20px;
+background-image: url("images/header-background_1.jpg");
+border: 2px solid #000000;
+font-weight: bold;
+font-size: 20px;
+}
+
+#forum {
+width: 850px;
+margin: 0 auto;
+padding: 20px;
+background: #43C435;
+
 border: 2px solid #000000;
 }
 
 #NFL {
-width: 550px;
+width: 850px;
 margin: 0 auto;
 text-align: left;
-background: #FFFFFF;
+background: #43C435;
+font-weight: bold;
 border: 2px solid #000000;
 }
 
@@ -23,7 +45,8 @@ width: 200px;
 height: 100px;
 margin: 0 auto;
 padding: 20px;
-background: #FFFFFF;
+background: #43C435;
+font-weight: bold;
 border: 1px solid #000000;
 }
 

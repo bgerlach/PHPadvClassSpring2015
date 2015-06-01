@@ -9,6 +9,9 @@
 <body>
 <?php
 
+    include_once 'Header.php';
+
+    
 $util = new Util();
 $validator = new Validator();
 $forumDB = new forumDB();
@@ -19,15 +22,11 @@ $usersDB = new usersDB();
 $subject = filter_input(INPUT_POST, 'subject');
 $userpost = filter_input(INPUT_POST, 'userpost');
 $username = filter_input(INPUT_POST, 'username');
-
+$currentUser1 = $_SESSION["currentUser"];
 $errors = array();
 
 
-if ( $util->isPostRequest() ) {
-if ( !$validator->emailTypeIsValid($subject) ) {
-$errors[] = 'Post is not valid';
-}
-}
+
 if ( count($errors) > 0 ) {
 foreach ($errors as $value) {
 echo '<p>',$value,'</p>';
@@ -36,7 +35,7 @@ echo '<p>',$value,'</p>';
 
   
  
-$forumDB->saveForum($subject,$userpost,$username);
+
     
 }
 ?>
@@ -54,31 +53,28 @@ $forumDB->saveForum($subject,$userpost,$username);
 
 <label>User:</label>
 <input type="text" size="40" name="username" 
-       value="<?php $usersDB->displayUserName(); ?>" placeholder="" />
-                <br>
+       value="<?php echo $currentUser1 ?>" placeholder="" />
+                <br>                <br>                <br>
 <input type="submit" value="Submit" />
 </form>
 </div>
 
-<strong>
+<div id="forum">
     <br>
-
             <table border="1" cellpadding="5">
                 <tr>
                     <th>Time</th>
                     <th>User</th>
                     <th>Subject</th>
                     <th>Comment</th>
-                    <th>Update</th>
-                    <th>Delete</th>
+
+
                 </tr>
-                <br>                <br>                <br>
+                <br>
 <?php
-
+$forumDB->saveForum($subject,$userpost,$username);
 $forumDB->displayForum();
-
-
-
 ?>
-</strong>
+                            
+</div>
 </body>

@@ -8,6 +8,7 @@
 */
 class Validator {
     
+    
 function check_login($username, $password)
 {
     //$password = sha1($password);
