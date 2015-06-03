@@ -64,7 +64,7 @@ public function displayForum() {
         echo '<td>', $value['username'];
         echo '<td>', $value['subject'], '</p>';
         echo '<td>', $value['userpost'], '</p>';
-        echo '<td><a href=updateEmail.php?forumid=',$value['forumid'],'>Update</a></td>';
+        echo '<td><a href=updatePost.php?forumid=',$value['forumid'],'>Update</a></td>';
         echo '<td><a href=deletePost.php?forumid=',$value['forumid'],'>Delete</a></td></tr>';
         $stmt->closeCursor();
     }

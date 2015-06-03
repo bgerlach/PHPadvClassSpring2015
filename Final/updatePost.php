@@ -1,81 +1,59 @@
-<?php 
-
-include './bootstrap.php'; ?>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <?php
-        
-        $dbConfig = array(
-            "DB_DNS"=>'mysql:host=localhost;port=3306;dbname=PHPadvClassSpring2015',
-            "DB_USER"=>'root',
-            "DB_PASSWORD"=>''
-        );
+    
+        <link rel="stylesheet" type="text/css" href="main.css"/>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+<?php
 
-        $pdo = new DB($dbConfig);
-        $db = $pdo->getDB();
-      
-         
-        if ( $util->isPostRequest() ) {
-            
-            $emailModel->map(filter_input_array(INPUT_POST));
-                       
-        } else {
-            $emailid = filter_input(INPUT_GET, 'emailid');
-            $emailModel = $emailDAO->getById($emailid);
-        }
-        
-        
-        $emailid = $emailModel->getEmailid();
-        $email = $emailModel->getEmail();
-        $active = $emailModel->getActive();  
-              
-        
-        $emailService = new EmailService($db, $util, $validator, $emailDAO, $emailModel);
-        
-        if ( $emailDAO->idExisit($emailModel->getEmailid()) ) {
-            $emailService->saveForm();
-        }
-        
-        
-        ?>
-        
-        
-         <h3>Update Email</h3>
-        <form action="#" method="post">
-             <input type="hidden" name="emailid" value="<?php echo $emailid; ?>" />
-            <label>Email:</label> 
-            <input type="text" name="email" value="<?php echo $email; ?>" placeholder="" />
-            <br /><br />
-            <label>Email Type:</label>
-            <select name="emailtypeid">
-            <?php 
-                foreach ($emailTypes as $value) {
-                    if ( $value->getEmailtypeid() == $emailTypeid ) {
-                        echo '<option value="',$value->getEmailtypeid(),'" selected="selected">',$value->getEmailtype(),'</option>';  
-                    } else {
-                        echo '<option value="',$value->getEmailtypeid(),'">',$value->getEmailtype(),'</option>';
-                    }
-                }
-            ?>
-            </select>
-            
-             <br /><br />
-            <label>Active:</label>
-            <input type="number" max="1" min="0" name="active" value="<?php echo $active; ?>" />
-             <br /><br />
-            <input type="submit" value="Submit" />
-        </form>
-         
-         
-         <?php         
-             $emailService->displayEmailActions();
-                          
-         ?>
-                     <a href="email-test.php">Home</a>      
-    </body>
+$forumid = filter_input(INPUT_GET, 'forumid');
+$db = new PDO('mysql:host=localhost;port=3306;dbname=PHPadvClassSpring2015', "root", "");
+
+
+$dbs = $db->prepare('SELECT * FROM NFLForum WHERE forumid = :forumid');
+$dbs->bindParam(':forumid', $forumid, PDO::PARAM_INT);
+
+if ( $dbs->execute() && $dbs->rowCount() > 0 ) {
+$results = $dbs->fetch(PDO::FETCH_ASSOC);
+?>
+    
+    <form action="updateForum_process.php" method="post">  
+                <br />
+
+                <input type="hidden" name="forumid" value="<?php echo $results['forumid']; ?>"/>
+                <br />
+                
+                <label>subject:</label>
+                <input type="text" name="subject" value="<?php echo $results['subject']; ?>" />
+                <br />
+
+                <label>userpost:</label>
+                <input type="text" name="userpost" value="<?php echo $results['userpost']; ?>" />
+                <br />
+                
+                <label>username:</label>
+                <input type="text" name="username" value="<?php echo $results['username']; ?>" />
+                <br />
+                
+                <label>logged:</label>
+                <input type="text" name="logged" value="<?php echo $results['logged']; ?>" />
+                <br />
+                
+                <input type="submit" value="updatepost" />
+                <br />
+            </form>
+<?php
+} else {
+echo '<h1> user ', $forumid,' was <strong>NOT</strong> updated</h1>';
+}
+
+var_dump($dbs);
+
+
+?>
+
+</body>
 </html>
