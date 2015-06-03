@@ -26,23 +26,23 @@ $results = $dbs->fetch(PDO::FETCH_ASSOC);
                 <input type="hidden" name="forumid" value="<?php echo $results['forumid']; ?>"/>
                 <br />
                 
-                <label>subject:</label>
+                <label>Subject:</label>
                 <input type="text" name="subject" value="<?php echo $results['subject']; ?>" />
                 <br />
 
-                <label>userpost:</label>
+                <label>Userpost:</label>
                 <input type="text" name="userpost" value="<?php echo $results['userpost']; ?>" />
                 <br />
                 
-                <label>username:</label>
+                <label>Username:</label>
                 <input type="text" name="username" value="<?php echo $results['username']; ?>" />
                 <br />
                 
-                <label>logged:</label>
+                <label>Logged:</label>
                 <input type="text" name="logged" value="<?php echo $results['logged']; ?>" />
                 <br />
                 
-                <input type="submit" value="updatepost" />
+                <input type="submit" value="Update Post" />
                 <br />
             </form>
 <?php
@@ -50,7 +50,6 @@ $results = $dbs->fetch(PDO::FETCH_ASSOC);
 echo '<h1> user ', $forumid,' was <strong>NOT</strong> updated</h1>';
 }
 
-var_dump($dbs);
 
 
 ?>
