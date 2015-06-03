@@ -1,28 +1,17 @@
-/
+
 <?php
+//delete from NFLforum where forumid = forumid
 
-//require_once('class.DB.php');
-//$forumid = $_POST['forumid'];
-
-
-//delete forum post
-
-        
-        $dbConfig = array(
-        "DB_DNS"=>'mysql:host=localhost;port=3306;dbname=PHPadvClassSpring2015',
-        "DB_USER"=>'root',
-        "DB_PASSWORD"=>''
-        );
-        
-            $pdo = new DB($dbConfig);
-            $db = $pdo->getDB();
-            
         $forumid = filter_input(INPUT_GET, 'forumid');
-            
-$query = "DELETE FROM forum
-          WHERE forumid = '$forumid'";
-$db->exec($query);
 
-// display the Product List page
-//include('addForumPost.php');
+$db = new PDO('mysql:host=localhost;port=3306;dbname=PHPadvClassSpring2015', "root", "");
+$dbs = $db->prepare('DELETE from NFLforum where forumid = :forumid');
+$dbs->bindParam(':forumid', $forumid, PDO::PARAM_INT);
+if ( $dbs->execute() && $dbs->rowCount() > 0 ) {
+echo '<h1> Post ', $forumid,' was deleted</h1>';
+} else {
+echo '<h1> Post ', $forumid,' was <strong>NOT</strong> deleted</h1>';
+}
+
+include('addForumPost.php');
 ?>
