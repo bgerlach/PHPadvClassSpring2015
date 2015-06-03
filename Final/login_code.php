@@ -3,6 +3,7 @@
 <?php
 
 
+//check if user exists in users databse and login if user exists
 include './bootstrap.php';
 
     

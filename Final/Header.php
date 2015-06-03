@@ -12,6 +12,7 @@
 
 <?php
 
+//Headers with a session to output current user
 session_start();
 
 

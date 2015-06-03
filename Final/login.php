@@ -9,7 +9,11 @@
           <body>  
     <?php 
     
+    //main login page
+    
     include_once 'Header.php';
+    
+
     
     if (isset($errors)&& count($errors)> 0) : ?>
         <h2>Errors:</h2>

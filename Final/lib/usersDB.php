@@ -1,9 +1,9 @@
 <?php
 
-
+//usersDB class
  class usersDB {
 
-    
+    //function to save new users on signup
      public function saveUsers($user) {
     
         $dbConfig = array(
@@ -26,6 +26,7 @@
     return false;
 }
 
+//displays current users
     public function displayUsers() {
 
                 $dbConfig = array(
@@ -54,7 +55,7 @@
 }
 }
 
-
+//returns the users by id
     public function getById($userID) {
          
         $dbConfig = array(
@@ -76,6 +77,7 @@
          return $model;
     }
     
+    //displays the username
         public function displayUserName() {
 
                 $dbConfig = array(

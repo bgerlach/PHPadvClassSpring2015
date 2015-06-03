@@ -9,7 +9,15 @@
 <body>
 <?php
 
+
+//page to display forums and allow users to make posts
+
     include_once 'Header.php';
+    
+    if ( empty($_SESSION['loggedin']) ) {
+        header( 'Location: http://localhost:8080/PHPadvClassSpring2015/Final/login.php' ) ;
+
+} 
 
     
 $util = new Util();
@@ -67,13 +75,21 @@ echo '<p>',$value,'</p>';
                     <th>User</th>
                     <th>Subject</th>
                     <th>Comment</th>
-
-
+                    <th>Update</th>
+                    <th>Delete</th>
                 </tr>
+                    <?php
+                   $forumDB->displayForum();
+                    ?>  
+                
+         
+
                 <br>
+        </table>
 <?php
 $forumDB->saveForum($subject,$userpost,$username);
-$forumDB->displayForum();
+
+
 ?>
                             
 </div>

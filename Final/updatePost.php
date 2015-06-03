@@ -18,14 +18,7 @@ include './bootstrap.php'; ?>
 
         $pdo = new DB($dbConfig);
         $db = $pdo->getDB();
-       
-        $util = new Util();
-        $validator = new Validator();
-        $emailDAO = new EmailDAO($db);
-        $emailTypeDAO = new EmailTypeDAO($db);
-        $emailModel = new EmailModel();
-        $emailTypeid = filter_input(INPUT_POST, 'emailtypeid');
-        $emailTypes = $emailTypeDAO->getAllRows();
+      
          
         if ( $util->isPostRequest() ) {
             

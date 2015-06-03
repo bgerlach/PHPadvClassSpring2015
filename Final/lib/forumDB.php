@@ -1,8 +1,9 @@
 <?php
 
-
+//forumDB class
  class forumDB {
 
+     //function that takes in subject, userpost, username and saves new forum posts to database
     public function saveForum($subject, $userpost, $username) {
     
         $dbConfig = array(
@@ -24,12 +25,29 @@
     return false;
 }
 
-    public function displayForum() {
+//function that takes in forumid and deletes post from database
+    public function deleteForum() {
 
-        ?>
+$forumid = $_POST['forumid'];
 
-                
-        <?php
+        $dbConfig = array(
+        "DB_DNS"=>'mysql:host=localhost;port=3306;dbname=PHPadvClassSpring2015',
+        "DB_USER"=>'root',
+        "DB_PASSWORD"=>''
+        );
+        
+            $pdo = new DB($dbConfig);
+            $db = $pdo->getDB();
+            
+$query = "DELETE FROM forum
+          WHERE forumid = '$forumid'";
+$db->exec($query);
+    }
+
+//function that displays all forum posts
+public function displayForum() {
+
+
                 $dbConfig = array(
         "DB_DNS"=>'mysql:host=localhost;port=3306;dbname=PHPadvClassSpring2015',
         "DB_USER"=>'root',
@@ -46,8 +64,8 @@
         echo '<td>', $value['username'];
         echo '<td>', $value['subject'], '</p>';
         echo '<td>', $value['userpost'], '</p>';
-       // echo '<td><a href=updateEmail.php?emailid=',$value->getEmailid(),'>Update</a></td>';
-        //echo '<td><a href=delete_post.php?forumid=',$value['forumid'],'>Delete</a></td></tr>';
+        echo '<td><a href=updateEmail.php?forumid=',$value['forumid'],'>Update</a></td>';
+        echo '<td><a href=deletePost.php?forumid=',$value['forumid'],'>Delete</a></td></tr>';
         $stmt->closeCursor();
     }
 }       else {

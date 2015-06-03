@@ -1,5 +1,5 @@
 <?php
-// Get the product data
+// Get user data
 $username = filter_input(INPUT_POST, 'username');
 $password = filter_input(INPUT_POST, 'password');
 
@@ -17,6 +17,8 @@ else if ((strlen($password) < 4))
 }   
 else{
    // $password = sha1($password);
+   
+    //add new user below
     $db = new PDO("mysql:host=localhost;port=3306;dbname=PHPadvClassSpring2015", "root", "");
     $dbs = $db->prepare('INSERT into users set username = :username, password = :password');
     $dbs->bindParam(':username', $username, PDO::PARAM_STR);
