@@ -13,7 +13,7 @@ $auth = $key.':';
 $method = $consumeAPI->getHTTPVerb();
 $data = $consumeAPI->getHTTPData();
 
-$url = $consumeAPI->endpoint('http://localhost/PHPadvClassSpring2015/week5/Lab4_API/api/v1');
+$url = $consumeAPI->endpoint('http://localhost:8080/PHPadvClassSpring2015/week5/Lab4_API/api/v1');
 
 $consumeAPI->callAPI($method, $url, $data, $auth);
 

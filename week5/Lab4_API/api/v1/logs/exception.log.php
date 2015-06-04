@@ -251,3 +251,37 @@
 [556d0a676a88d]	[exception]	[06-02-2015 3:44am]	Invalid credentials
 [556d0a676ba5d]	[exception]	[06-02-2015 3:44am]	Invalid credentials
 [556d0a687aba2]	[exception]	[06-02-2015 3:44am]	Invalid credentials
+[556fb5e9cb437]	[exception]	[06-04-2015 4:20am]	0 ID does not exist
+[556fb5f29d47e]	[exception]	[06-04-2015 4:20am]	0 ID does not exist
+[556fb5f33318f]	[exception]	[06-04-2015 4:20am]	0 ID does not exist
+[556fb5f36400d]	[exception]	[06-04-2015 4:20am]	0 ID does not exist
+[556fb5f38ca8f]	[exception]	[06-04-2015 4:20am]	0 ID does not exist
+[556fb5fba008c]	[exception]	[06-04-2015 4:20am]	0 ID does not exist
+[556fb5fe179d1]	[exception]	[06-04-2015 4:20am]	0 ID does not exist
+[556fb602577c4]	[exception]	[06-04-2015 4:20am]	0 ID does not exist
+[556fb6048de86]	[exception]	[06-04-2015 4:20am]	0 ID does not exist
+[556fb6070db47]	[exception]	[06-04-2015 4:20am]	0 ID does not exist
+[556fb623f32a7]	[exception]	[06-04-2015 4:21am]	0 ID does not exist
+[556fb9b76fa16]	[exception]	[06-04-2015 4:36am]	New Email Not Created
+[556fbab4642a3]	[exception]	[06-04-2015 4:40am]	New Email Not Created
+[556fbab9bef85]	[exception]	[06-04-2015 4:40am]	0 ID Email Not Deleted
+[556fbba576d6d]	[exception]	[06-04-2015 4:44am]	New Email Not Created
+[556fbbd33b024]	[exception]	[06-04-2015 4:45am]	0 ID does not exist
+[556fbbf9b2caf]	[exception]	[06-04-2015 4:46am]	0 ID does not exist
+[556fbbfa4cdc5]	[exception]	[06-04-2015 4:46am]	0 ID does not exist
+[556fbbfabc75c]	[exception]	[06-04-2015 4:46am]	0 ID does not exist
+[556fbbfaeb1db]	[exception]	[06-04-2015 4:46am]	0 ID does not exist
+[556fbbfb23f38]	[exception]	[06-04-2015 4:46am]	0 ID does not exist
+[556fbbfb513fc]	[exception]	[06-04-2015 4:46am]	0 ID does not exist
+[556fbbfb7f48e]	[exception]	[06-04-2015 4:46am]	0 ID does not exist
+[556fbbfbafa13]	[exception]	[06-04-2015 4:46am]	0 ID does not exist
+[556fbbfbe21d2]	[exception]	[06-04-2015 4:46am]	0 ID does not exist
+[556fbc0494e65]	[exception]	[06-04-2015 4:46am]	0 ID does not exist
+[556fbc395104e]	[exception]	[06-04-2015 4:47am]	0 ID does not exist
+[556fbc3c11e07]	[exception]	[06-04-2015 4:47am]	0 ID does not exist
+[556fbc3c95090]	[exception]	[06-04-2015 4:47am]	0 ID does not exist
+[556fbc3cbeded]	[exception]	[06-04-2015 4:47am]	0 ID does not exist
+[556fbc3ce8287]	[exception]	[06-04-2015 4:47am]	0 ID does not exist
+[556fbc3d1b648]	[exception]	[06-04-2015 4:47am]	0 ID does not exist
+[556fbc3d48a65]	[exception]	[06-04-2015 4:47am]	0 ID does not exist
+[556fbc9452c22]	[exception]	[06-04-2015 4:48am]	0 ID does not exist
